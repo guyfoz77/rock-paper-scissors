@@ -63,14 +63,13 @@ function checkVictory(playerChoice, computerChoice) {
     return victory;
 }
 
-
-for (let i = 1; i<=5; i++) {
-
+function playGame() {      //This will play a game, and output the result of the game to the console.
+    let computerChoice = getComputerChoice();
+    let playerChoice = getPlayerChoice();
+    console.log(`The computer chose ${computerChoice}, you chose ${playerChoice}, ${checkVictory(playerChoice, computerChoice)} The score is now computer:${computerScore} - player:${playerScore}.`);
 }
 
 
-let computerChoice = getComputerChoice();
-let playerChoice = getPlayerChoice();
-console.log(`computer ${computerChoice}`);
-console.log(`player ${playerChoice}`);
-console.log(checkVictory(playerChoice, computerChoice));
+for (let i = 1; i<=5; i++) {
+    playGame();
+}
