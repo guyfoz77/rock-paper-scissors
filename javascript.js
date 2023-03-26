@@ -1,12 +1,15 @@
 //get player choice (done)
 //computer makes random choice (done)
-//compare computer and placer choice
-//decide winner
+//compare computer and placer choice (done)
+//decide winner (done)
+//play 5 games and keep track of score.
 
-//Validate user input?
+//Validate user input? (done, kind of)
 
 const choice = ["rock","paper","scissors"];
-let victory;
+let victory;    //this is used to store a string which will say wether the player wins, loses, draws or has input an invalid choice.
+let playerScore = 0;
+let computerScore = 0;
 
 function getPlayerChoice() {
     return selection = (prompt("Rock, paper or scissors?")).toLowerCase(); //obtains a selection from the user and converts it to lower case.
@@ -19,34 +22,52 @@ function getComputerChoice() {
 
 function checkVictory(playerChoice, computerChoice) {
     if (playerChoice == computerChoice) {   //checks for a draw
-        victory = "draw"
+        victory = "It's a draw."
     } else if (computerChoice == "rock") {      //these else if statements check each computerChoice against player choice and...
-        switch(playerChoice) {                      // ...determines a victor.
-            case "paper": victory = "win";
+        switch(playerChoice) {                      // ...determines a victor. It will also update the player/computer score accordingly.
+            case "paper": {
+                victory = "You win!";
+                playerScore += 1; } 
             break;
-            case "scissors": victory = "lose";
+            case "scissors": {
+                victory = "You lose!";
+                computerScore += 1; }
             break;
             default: victory = "invalidSelection";      //these default selections fire if an invalid input is passed by the user.
         }   
     } else if (computerChoice == "paper") {
         switch(playerChoice) {
-            case "scissors": victory = "win";
+            case "scissors": {
+                victory = "You win!";
+                playerScore += 1; }
             break;
-            case "rock": victory = "lose";
+            case "rock": {
+                victory = "You lose!";
+                computerScore += 1; }
             break;
             default: victory = "invalidSelection";
         } 
     } else if (computerChoice == "scissors") {
         switch(playerChoice) {
-            case "rock": victory = "win";
+            case "rock": {
+                victory = "You win!";
+                playerScore += 1; }
             break;
-            case "paper": victory = "lose";
+            case "paper": {
+                victory = "You lose!";
+                computerScore += 1; }
             break;
             default: victory = "invalidSelection";
         } 
     }
     return victory;
 }
+
+
+for (let i = 1; i<=5; i++) {
+
+}
+
 
 let computerChoice = getComputerChoice();
 let playerChoice = getPlayerChoice();
