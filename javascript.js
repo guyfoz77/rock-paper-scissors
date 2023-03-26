@@ -2,7 +2,8 @@
 //computer makes random choice (done)
 //compare computer and placer choice (done)
 //decide winner (done)
-//play 5 games and keep track of score.
+//play 5 games and keep track of score. (done)
+//after 5 games, summarise the outcome.
 
 //Validate user input? (done, kind of)
 
@@ -72,4 +73,13 @@ function playGame() {      //This will play a game, and output the result of the
 
 for (let i = 1; i<=5; i++) {
     playGame();
+}
+
+let finalScore = `Computer:${computerScore} - Player:${playerScore}.`   //stores the scoreline after the games are played.
+if (computerScore == playerScore) {     //this section will print the final result to the console.
+    console.log("It's a draw! " + finalScore);
+} else if (computerScore > playerScore) {
+    console.log("You lose! " + finalScore);
+} else {
+    console.log("You win! " + finalScore);
 }
