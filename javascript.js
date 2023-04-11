@@ -71,9 +71,10 @@ function playGame() {      //This will play a game, and output the result of the
 }
 
 
-for (let i = 1; i<=5; i++) {
-    playGame();
-}
+// for (let i = 1; i<=5; i++) {
+//     playGame();
+// }
+
 
 let finalScore = `Computer:${computerScore} - Player:${playerScore}.`   //stores the scoreline after the games are played.
 if (computerScore == playerScore) {     //this section will print the final result to the console.
