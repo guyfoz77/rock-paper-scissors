@@ -1,11 +1,12 @@
-html {
+body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
 }
 
 .mainContainer,
 .scoreContainer,
-.buttonContainer {
+.buttonContainer,
+.commentaryContainer {
     display: flex;
 }
 
@@ -17,28 +18,41 @@ html {
     gap: 50px;
 }
 
-.scoreContainer {
-    width: 80vw;
-    justify-content: space-around;
+.buttonContainer,
+.scoreContainer,
+.commentaryContainer {
+    width: 90vw;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
-
-.buttonContainer {
-    width: 50vw;
-    justify-content: space-around;
+.scoreContainer {
+    flex-direction: column;
 }
 
 .score {
-    font-size: 200px;
+    font-size: 40px;    
 }
 
 .commentary {
-    font-size: 100px;
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
+    border-style: dotted;
+    max-width: 500px;
+    flex: auto;
+    
 }
 
 .button {
     height: 100px;
-    width: 100px;
-    border-radius: 100px;
+    min-width: 100px;
+    max-width: 100px;
+    border-radius: 50px;
+    border-color: aquamarine;
+    border-style: solid;
+    padding: 10px;
     background: linear-gradient(270deg, #13547a 0%, #80d0c7 100%);
     font-size: 50px;
 }
