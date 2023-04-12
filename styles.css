@@ -1,3 +1,7 @@
+/* To add:
+-Hovering over buttons should make them grow slightly
+-clicking on a button should make them shrink */
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
@@ -55,4 +59,9 @@ body {
     padding: 10px;
     background: linear-gradient(270deg, #13547a 0%, #80d0c7 100%);
     font-size: 50px;
+    transition: all .2s ease-in-out;
+}
+
+.button:hover {
+    transform: scale(1.1);
 }

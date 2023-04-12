@@ -1,16 +1,14 @@
-//get player choice (done)
-//computer makes random choice (done)
-//compare computer and placer choice (done)
-//decide winner (done)
-//play 5 games and keep track of score. (done)
-//after 5 games, summarise the outcome.
-
-//Validate user input? (done, kind of)
-
 const choice = ["rock","paper","scissors"];
 let victory;    //this is used to store a string which will say wether the player wins, loses, draws or has input an invalid choice.
 let playerScore = 0;
 let computerScore = 0;
+
+const buttons = document.querySelectorAll('.button');
+
+
+buttons.forEach(button => {
+    button.addEventListener('click', () => playGame())
+});
 
 function getPlayerChoice() {
     return selection = (prompt("Rock, paper or scissors?")).toLowerCase(); //obtains a selection from the user and converts it to lower case.
