@@ -9,6 +9,8 @@ let playerScore = 0;
 let computerScore = 0;
 
 const buttons = document.querySelectorAll('.button');
+const playerScoreElement = document.querySelector('#playerScore');
+const compScoreElement = document.querySelector('#compScore');
 const commentary = document.querySelector('.commentary');
 
 
@@ -63,20 +65,16 @@ function checkVictory(playerChoice, computerChoice) {
         } 
     }
     //put the score update code here
+
+    playerScoreElement.textContent = `Player Score: ${playerScore}`;
+    compScoreElement.textContent = `Computer Score: ${computerScore}`;
     return victory;
 }
 
 function playGame(playerChoice) {      //This will play a game, and output the result of the game to the console.
     let computerChoice = getComputerChoice();
     commentary.textContent = `The computer chose ${computerChoice}, you chose ${playerChoice}, ${checkVictory(playerChoice, computerChoice)}`
-
-    console.log(`The computer chose ${computerChoice}, you chose ${playerChoice}, ${checkVictory(playerChoice, computerChoice)} The score is now computer:${computerScore} - player:${playerScore}.`);
 }
-
-
-// for (let i = 1; i<=5; i++) {
-//     playGame();
-// }
 
 
 let finalScore = `Computer:${computerScore} - Player:${playerScore}.`   //stores the scoreline after the games are played.
