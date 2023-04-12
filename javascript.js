@@ -1,7 +1,4 @@
-// Clicking on buttons should make them smaller temporarily
-// update score for each game
-// victory messege after 5 games
-// reset button after 5 games
+//clicking a button should make it smaller temporarily. 
 
 const choice = ["rock","paper","scissors"];
 let victory;    //this is used to store a string which will say wether the player wins, loses, draws or has input an invalid choice.
@@ -12,11 +9,17 @@ const buttons = document.querySelectorAll('.button');
 const playerScoreElement = document.querySelector('#playerScore');
 const compScoreElement = document.querySelector('#compScore');
 const commentary = document.querySelector('.commentary');
+const endScreenElement = document.querySelector('.endScreen');
+const mainContainer = document.querySelector('.mainContainer');
+const victoryText = document.querySelector('.victoryText');
+const restarButton = document.querySelector('.restartButton');
 
 
 buttons.forEach(button => {
     button.addEventListener('click', (e) => playGame(e.target.id))
 });
+
+restarButton.addEventListener('click', () => location.reload());
 
 
 function getComputerChoice() {
@@ -68,7 +71,21 @@ function checkVictory(playerChoice, computerChoice) {
 
     playerScoreElement.textContent = `Player Score: ${playerScore}`;
     compScoreElement.textContent = `Computer Score: ${computerScore}`;
-    return victory;
+    
+    if (computerScore >= 5) {
+        endScreenElement.style.display = 'flex';
+        mainContainer.style.display= 'none';
+        victoryText.textContent = `You Lose! The final score is:
+        Computer: ${computerScore}
+        Player: ${playerScore}`;
+    } else if (playerScore >= 5) {
+        endScreenElement.style.display = 'flex';
+        mainContainer.style.display= 'none';
+        victoryText.textContent = `You Win! The final score is:
+        Computer: ${computerScore}
+        Player: ${playerScore}`;
+    } else return victory;
+
 }
 
 function playGame(playerChoice) {      //This will play a game, and output the result of the game to the console.
