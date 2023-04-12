@@ -1,18 +1,21 @@
+// Clicking on buttons should make them smaller temporarily
+// update score for each game
+// victory messege after 5 games
+// reset button after 5 games
+
 const choice = ["rock","paper","scissors"];
 let victory;    //this is used to store a string which will say wether the player wins, loses, draws or has input an invalid choice.
 let playerScore = 0;
 let computerScore = 0;
 
 const buttons = document.querySelectorAll('.button');
+const commentary = document.querySelector('.commentary');
 
 
 buttons.forEach(button => {
-    button.addEventListener('click', () => playGame())
+    button.addEventListener('click', (e) => playGame(e.target.id))
 });
 
-function getPlayerChoice() {
-    return selection = (prompt("Rock, paper or scissors?")).toLowerCase(); //obtains a selection from the user and converts it to lower case.
-}
 
 function getComputerChoice() {
     let rand = Math.floor(Math.random() * 3);    //rolls a random number between 0 and 2
@@ -59,12 +62,14 @@ function checkVictory(playerChoice, computerChoice) {
             default: victory = "invalidSelection";
         } 
     }
+    //put the score update code here
     return victory;
 }
 
-function playGame() {      //This will play a game, and output the result of the game to the console.
+function playGame(playerChoice) {      //This will play a game, and output the result of the game to the console.
     let computerChoice = getComputerChoice();
-    let playerChoice = getPlayerChoice();
+    commentary.textContent = `The computer chose ${computerChoice}, you chose ${playerChoice}, ${checkVictory(playerChoice, computerChoice)}`
+
     console.log(`The computer chose ${computerChoice}, you chose ${playerChoice}, ${checkVictory(playerChoice, computerChoice)} The score is now computer:${computerScore} - player:${playerScore}.`);
 }
 
@@ -82,3 +87,5 @@ if (computerScore == playerScore) {     //this section will print the final resu
 } else {
     console.log("You win! " + finalScore);
 }
+
+
