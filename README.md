@@ -1,10 +1,7 @@
 # rock-paper-scissors
 
-## A project for the Odin project.
----
+**Live preview: https://guyfoz77.github.io/rock-paper-scissors/**
 
-### Goals
-- Sharpen up my JS skills.
-- Work on pseudocodeing.
-- Apply problem solving skills (break down problem etc).
-- Learn README markdown stuff!
+A simple game where the player competes against the computer. The computers moves are selected at random.
+
+Dabbling in CSS animations too!
